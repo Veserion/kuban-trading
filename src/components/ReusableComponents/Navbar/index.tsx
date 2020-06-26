@@ -27,7 +27,9 @@ export default class Navbar extends React.Component<IProps, IState> {
         const screenWidth = window.innerWidth
         return <Root>
             <WrapperRoot>
-                <Logo/>
+                <WrapperLogo>
+                    <Logo/>
+                </WrapperLogo>
                 <Wrapper>
                     <Contacts/>
                     {screenWidth > 640
@@ -42,35 +44,38 @@ export default class Navbar extends React.Component<IProps, IState> {
     }
 }
 
-const
-    Root = styled.div`
-                    width: 100vw;
-                    border-bottom: 2px solid rgb(0,161,233);
-                    box-sizing: border-box;
-                    `
-const
-    WrapperRoot = styled.div`
-                    width: 86vw;
-                    padding: 0 7vw;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    font-family: sans-serif;
-                    position: relative;
-                    `
-const
-    Logo = styled.a`
-                    width: 200px;
-                    height: 69px;
-                    background: transparent url(${logo}) no-repeat;
-                    z-index: 100;
-                    `
-const
-    Wrapper = styled.div`
-                    width: auto;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-end;
-                    z-index: 0;
-                    position: relative;
-                    `
+const Root = styled.div`
+width: 100vw;
+border-bottom: 2px solid rgb(0,161,233);
+box-sizing: border-box;
+`
+const WrapperRoot = styled.div`
+width: 82vw;
+padding: 0 9vw;
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-family: sans-serif;
+position: relative;
+`
+const WrapperLogo = styled.div`
+width: 20vw;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+`
+const Logo = styled.a`
+width: 200px;
+height: 69px;
+background: transparent url(${logo}) no-repeat;
+z-index: 100;
+`
+const Wrapper = styled.div`
+width: auto;
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+z-index: 0;
+position: relative;
+`

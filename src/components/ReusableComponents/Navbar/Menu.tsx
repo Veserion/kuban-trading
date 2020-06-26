@@ -6,7 +6,10 @@ const Root = styled.div`
 height: 32px;
 display: flex;
 align-items: center;
+width: 62vw;
+background: rgb(0,161,233);
 @media(max-width: 640px){
+  width: auto;
   flex-direction: column;
   position: absolute;
   right: 0px;
@@ -16,6 +19,7 @@ align-items: center;
 const MenuElement = styled.a`
 height: 34px;
 padding: 0 20px;
+//flex: 1;
 display: flex;
 align-items: center;
 text-decoration: none;

@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import Carousel from './Carousel'
 import AboutCompany from "./AboutCompany";
 import OurPossibilities from "./OurPossibilities";
+import Fertilizers from "./Fertilizers";
 
 export default class MainPage extends React.Component {
     render() {
@@ -10,6 +11,7 @@ export default class MainPage extends React.Component {
             <Carousel/>
             <AboutCompany/>
             <OurPossibilities/>
+            <Fertilizers/>
         </Root>
     }
 }

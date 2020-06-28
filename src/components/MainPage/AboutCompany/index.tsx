@@ -4,7 +4,7 @@ import bg from '../../../assets/aboutCompany/c_z_back.png'
 import gif from '../../../assets/aboutCompany/c_z.gif'
 
 const AboutCompany: React.FC = () => {
-    return <Root>
+    return <Root id={'about_company'}>
         <Title>
             О компании
         </Title>

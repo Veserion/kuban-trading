@@ -15,8 +15,9 @@ export default class Carousel extends React.Component {
                 dots={false}
                 slidesToShow={1}
                 slidesToScroll={1}
-                autoplay={false}
+                autoplay={true}
                 autoplaySpeed={2000}
+                speed={900}
                 pauseOnDotsHover={true}
                 arrows={false}
                 infinite
@@ -39,7 +40,6 @@ justify-content: center;
 const Image = styled.div`
 width: 20vw;
 min-height: calc(100% - 40px);
-//bac
 background: rgb(245,247,246) url(${background});
 `
 const CarouselImage = styled.img`

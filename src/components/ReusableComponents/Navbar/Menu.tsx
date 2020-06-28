@@ -39,7 +39,7 @@ export default class Menu extends React.Component {
     render() {
         return <Root>
             {menu.map(point =>
-                <MenuElement id={point.href} href={`#${point.href}`} key={point.href}>
+                <MenuElement href={`#${point.href}`} key={point.href}>
                     {point.text}
                 </MenuElement>)
             }
@@ -49,7 +49,7 @@ export default class Menu extends React.Component {
 
 
 const menu = [{href: 'about_company', text: 'о компании'},
-    {href: 'nashi_vozmojnosti', text: 'наши возможности'},
-    {href: 'celi_perspektivi', text: 'цели и перспективы'},
-    {href: 'perspektivi', text: 'наши партнеры'},
+    {href: 'our_possibilities', text: 'наши возможности'},
+    {href: 'fertilizers', text: 'реализация удобрений'},
+    {href: 'partners', text: 'наши партнеры'},
     {href: 'contacts', text: 'контакты'}]

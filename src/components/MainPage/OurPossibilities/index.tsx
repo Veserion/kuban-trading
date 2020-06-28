@@ -14,7 +14,7 @@ const items = [
 ]
 
 const OurPossibilities: React.FC = () => {
-    return <Root>
+    return <Root id={'our_possibilities'}>
         <Title>
             Наши возможности
         </Title>
@@ -30,6 +30,7 @@ export default OurPossibilities
 
 const Root = styled.div`
 width: 82vw;
+margin-top: 40px;
 `
 const Title = styled.div`
 width: calc(19vw - 10px);

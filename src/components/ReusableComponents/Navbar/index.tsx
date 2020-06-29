@@ -17,7 +17,7 @@ interface IState {
 
 export default class Navbar extends React.Component<IProps, IState> {
 
-    state: IState = {isOpenedMenu: true}
+    state: IState = {isOpenedMenu: false}
 
     toggleMenu = () => this.setState({isOpenedMenu: !this.state.isOpenedMenu})
 
@@ -28,7 +28,7 @@ export default class Navbar extends React.Component<IProps, IState> {
         return <Root>
             <WrapperRoot>
                 <WrapperLogo>
-                    <Logo/>
+                    <Logo src={logo}/>
                 </WrapperLogo>
                 <Wrapper>
                     <Contacts/>
@@ -55,23 +55,25 @@ padding: 0 9vw;
 display: flex;
 justify-content: space-between;
 align-items: center;
-font-family: sans-serif;
+font-family: 'Roboto', sans-serif;
 position: relative;
 `
-const WrapperLogo = styled.div`
+const WrapperLogo = styled.a`
 width: 20vw;
 height: 100%;
 display: flex;
 align-items: center;
 justify-content: center;
 `
-const Logo = styled.a`
-width: 200px;
-height: 69px;
-background: transparent url(${logo}) no-repeat;
-z-index: 100;
+const Logo = styled.img`
+max-width: 90%;
+max-height: 80%;
+z-index: 10;
 `
 const Wrapper = styled.div`
+@media(min-width: 641px){
+  width: 62vw
+}
 width: auto;
 display: flex;
 flex-direction: column;

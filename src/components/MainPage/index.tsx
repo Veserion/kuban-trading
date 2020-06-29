@@ -4,6 +4,7 @@ import Carousel from './Carousel'
 import AboutCompany from "./AboutCompany";
 import OurPossibilities from "./OurPossibilities";
 import Fertilizers from "./Fertilizers";
+import OurPartners from './OurPartners';
 
 export default class MainPage extends React.Component {
     render() {
@@ -12,6 +13,7 @@ export default class MainPage extends React.Component {
             <AboutCompany/>
             <OurPossibilities/>
             <Fertilizers/>
+            <OurPartners/>
         </Root>
     }
 }

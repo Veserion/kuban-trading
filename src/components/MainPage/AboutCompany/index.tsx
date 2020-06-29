@@ -31,6 +31,9 @@ const Root = styled.div`
 width: 82vw;
 margin-top: 40px;
 display: block;
+@media(max-width: 900px){
+  //width: 40vw;
+}
 `
 const Wrapper = styled.div`
 display: flex;
@@ -38,6 +41,9 @@ display: flex;
 const LeftColumn = styled.div`
 width: 20vw;
 display: block;
+@media(max-width: 900px){
+  width: 40vw;
+}
 `
 const Title = styled.div`
 width: calc(20vw - 10px);
@@ -49,15 +55,25 @@ font-size: 24px;
 color: white;
 background: #00a0e3;
 border-radius: 5px 5px 0px 0px;
+@media(max-width: 1300px){
+  font-size: 20px;
+}
+@media(max-width: 900px){
+  width: calc(40vw - 10px);
+}
 `
 const WrapperGif = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-background-size: cover;
 background: url(${bg});
+background-size: 100%;
 width: 100%;
 height: 300px;
+@media(max-width: 900px){
+  width: 40vw;
+  height: 100%;
+}
 `
 const Gif = styled.div`
 width: 171px;
@@ -74,4 +90,11 @@ const RightColumn = styled.div`
 width: calc(62vw - 10%);
 display: flex;
 padding: 40px 5% 0 5%;
+border: 2px solid #00a0e3;
+@media(max-width: 900px){
+  width: auto;
+  padding: 20px 5% 20px 5%;
+  border-radius: 0 4px 4px 0;
+  color: #00a0e3;
+}
 `

@@ -20,7 +20,7 @@ const Info = styled.a`
 padding: 10px 0;
 display: flex;
 align-items: center;
-font-family: sans-serif;
+font-family: 'Roboto', sans-serif;
 text-decoration: none;
 
 `

@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "@emotion/styled";
 import bg from '../../../assets/fertilizers/block3_background.jpg'
+import Link from './Link'
 
 const items = [
-    {url: '', text: 'Азотные удобрения'},
-    {url: '', text: 'Фосфорные удобрения'},
-    {url: '', text: 'Калийные удобрения'},
-    {url: '', text: 'Комплексные удобрения'}
+    {url: 'nitrogen_fertilizers', text: 'Азотные удобрения'},
+    {url: 'phosphoric_fertilizers', text: 'Фосфорные удобрения'},
+    {url: 'potash_fertilizer', text: 'Калийные удобрения'},
+    {url: 'complex_fertilizers', text: 'Комплексные удобрения'}
 ]
 export default class Fertilizers extends React.Component<any, any> {
     render() {
@@ -39,19 +40,26 @@ export default class Fertilizers extends React.Component<any, any> {
                         info@kuban-trading.ru
                     </p>
                 </Text>
-                <Links>
-
-                </Links>
             </Wrapper>
+            <Links>
+                {items.map((item, i) =>
+                    <Link key={i} url={item.url} text={item.text}/>)
+                }
+            </Links>
         </Root>
     }
 }
 
 const Root = styled.div`
-//width: 100vw;
 margin-top: 40px;
 display: block;
-//justify-content: flex-start;
+@media(max-width: 640px){
+  width: 82vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
 `
 const Title = styled.div`
 width: calc(40vw - 10px);
@@ -64,21 +72,76 @@ font-size: 24px;
 color: white;
 background: #00a0e3;
 border-radius: 5px 5px 0px 0px;
+@media(max-width: 1300px){
+  font-size: 20px;
+}
+@media(max-width: 640px){
+  margin-left: 0;
+  width: 40vw;
+}
 `
 const Wrapper = styled.div`
 width: calc(100vw - 9vw);
 padding-left: 9vw;
-//height: 400px;
 background-image: url(${bg});
+background-repeat:  no-repeat;
+background-size: 100% 100%;
+@media(max-width: 640px){
+  width: 82vw;
+  background-image: none;
+  padding-left: 0;
+}
 `
 const Text = styled.div`
 width: calc(40vw - 30px);
 padding: 40px 15px;
 background: white;
+opacity: .85;
 p{
   margin: 0;
 }
+@media(max-width: 640px){
+  padding: 20px 0px 10px 0;
+  width: 100%;
+}
 `
 const Links = styled.div`
-
-    `
+margin-top: -200px;
+margin-right: 4vw;
+position: absolute;
+right: 0;
+>div:nth-child(1){
+  margin-left: -40px;
+}
+>div:nth-child(2){
+  margin-left: -80px;
+}
+>div:nth-child(3){
+  margin-left: -120px;
+}
+>div:nth-child(4){
+  margin-left: -160px;
+}
+@media(max-width: 640px){
+  margin-top: 1vw;
+  padding: 20px 0;
+  width: 100%;
+  background-image: none;
+  color: black;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  position: unset;
+  >div:nth-child(1){
+    margin-left: 0px;
+  }
+  >div:nth-child(2){
+    margin-left: 0px;
+  }
+  >div:nth-child(3){
+    margin-left: 0px;
+  }
+  >div:nth-child(4){
+    margin-left: 0px;
+  }
+}
+`

@@ -14,7 +14,7 @@ export default class Carousel extends React.Component {
             <Image/>
             <Image2 src={background}/>
             <Slider
-                css={css`@media(max-width: 640px){display: none;}`}
+                css={css`@media(max-width: 758px){display: none;}`}
                 centerMode={false}
                 dots={false}
                 slidesToShow={1}
@@ -48,20 +48,20 @@ width: 20vw;
 min-height: calc(100% - 40px);
 background: rgb(245,247,246) url(${background}) no-repeat;
 background-size: 100%;
-@media(max-width: 640px){
+@media(max-width: 758px){
   display: none;
 }
 `
 const Image2 = styled.img`
 display: none;
-@media(max-width: 640px){
+@media(max-width: 758px){
   display: block;
   width: 20vw;
 }
 `
 const Image3 = styled.img`
 display: none;
-@media(max-width: 640px){
+@media(max-width: 758px){
   display: block;
   width: 62vw;
 }

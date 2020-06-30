@@ -21,7 +21,18 @@ export default class Navbar extends React.Component<IProps, IState> {
 
     toggleMenu = () => this.setState({isOpenedMenu: !this.state.isOpenedMenu})
 
-
+    componentDidMount(): void {
+        document.addEventListener('mousedown', this.handleCloseMenu)
+    }
+    componentWillUnmount(): void {
+        document.removeEventListener('mousedown', this.handleCloseMenu);
+    }
+    handleCloseMenu = (event: any) => {
+        const path = event.path || (event.composedPath && event.composedPath());
+        if (this.state.isOpenedMenu && !(path.some((element: any) => element.dataset && element.dataset.owner === 'search'))) {
+            this.setState({isOpenedMenu: false})
+        }
+    }
     render() {
         const {isOpenedMenu} = this.state;
         const screenWidth = window.innerWidth
@@ -32,7 +43,7 @@ export default class Navbar extends React.Component<IProps, IState> {
                 </WrapperLogo>
                 <Wrapper>
                     <Contacts/>
-                    {screenWidth > 640
+                    {screenWidth > 758
                         ? <Menu/>
                         : isOpenedMenu && <Menu/>}
                 </Wrapper>

@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 const Root = styled.div`
 display: none;
-@media(max-width: 640px){
+@media(max-width: 758px){
   display: block;
   position: absolute;
   top: 10px;

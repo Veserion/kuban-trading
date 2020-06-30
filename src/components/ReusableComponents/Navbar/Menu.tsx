@@ -44,7 +44,7 @@ height: 32px;
 display: flex;
 align-items: center;
 background: rgb(0,161,233);
-@media(max-width: 640px){
+@media(max-width: 758px){
   width: auto;
   height: auto;
   flex-direction: column;
@@ -67,7 +67,7 @@ background: rgb(0,161,233);
 @media(max-width: 867px){
   font-size: 13px;
 }
-@media(max-width: 640px){
+@media(max-width: 758px){
   width: 170px;
   padding: 8px 20px;
   border-right: 0;

@@ -4,6 +4,7 @@ import Navbar from '../ReusableComponents/Navbar';
 import MainPage from "../MainPage";
 import {Route, Router, Switch} from 'react-router-dom';
 import {createBrowserHistory} from "history";
+import Footer from '../../components/ReusableComponents/Footer'
 
 const history = createBrowserHistory();
 
@@ -16,6 +17,7 @@ export default class App extends React.Component {
                     <Route exact path="/" component={MainPage}/>
                     {/*<Route exact path="/"*/}
                 </Switch>
+                <Footer/>
             </Root>
         </Router>
     }

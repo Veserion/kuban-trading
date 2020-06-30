@@ -5,6 +5,7 @@ import AboutCompany from "./AboutCompany";
 import OurPossibilities from "./OurPossibilities";
 import Fertilizers from "./Fertilizers";
 import OurPartners from './OurPartners';
+import GoogleMap from "./GoogleMap";
 
 export default class MainPage extends React.Component {
     render() {
@@ -14,6 +15,7 @@ export default class MainPage extends React.Component {
             <OurPossibilities/>
             <Fertilizers/>
             <OurPartners/>
+            <GoogleMap/>
         </Root>
     }
 }

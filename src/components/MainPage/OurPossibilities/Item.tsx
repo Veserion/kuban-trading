@@ -36,10 +36,11 @@ border-radius: 0px 0px 5px 5px;
 
 const Image = styled.img`
 width: 100%;
-border-radius: 4px;
+border-radius: 4px 4px 0 0;
 `
 const Text = styled.div`
 height: 7vw;
+margin-top: -5px;
 display: flex;
 align-items: center;
 text-align: center;
@@ -48,8 +49,6 @@ color: #00a0e3;
 background: white;
 padding: 0 10px;
 border-radius: 0px 0px 5px 5px;
-border: 2px solid #00a0e3;
-box-sizing: border-box;
 @media(max-width: 1030px){
   font-size: 14px;
 }

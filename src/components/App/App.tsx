@@ -5,7 +5,7 @@ import MainPage from "../MainPage";
 import {Route, Router, Switch} from 'react-router-dom';
 import {createBrowserHistory} from "history";
 import Footer from '../../components/ReusableComponents/Footer'
-
+import ShopPage from '../ShopPage'
 const history = createBrowserHistory();
 
 export default class App extends React.Component {
@@ -15,7 +15,7 @@ export default class App extends React.Component {
                 <Navbar/>
                 <Switch>
                     <Route exact path="/" component={MainPage}/>
-                    {/*<Route exact path="/"*/}
+                    <Route exact path="/shop-page" component={ShopPage}/>
                 </Switch>
                 <Footer/>
             </Root>

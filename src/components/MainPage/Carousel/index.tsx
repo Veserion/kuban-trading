@@ -20,8 +20,8 @@ export default class Carousel extends React.Component {
                 slidesToShow={1}
                 slidesToScroll={1}
                 autoplay={true}
-                autoplaySpeed={2000}
-                speed={900}
+                autoplaySpeed={3000}
+                speed={999}
                 pauseOnDotsHover={true}
                 arrows={false}
                 infinite
@@ -39,6 +39,7 @@ const Root = styled.div`
 width: 100vw;
 display: flex;
 justify-content: center;
+margin-bottom: -5px;
 .slick-slider {
     width: 62vw;
 }
@@ -67,6 +68,6 @@ display: none;
 }
 `
 const CarouselImage = styled.img`
-width: 62vw !important;
-min-height: 100%;
+width: 62vw;
+height: 154%;
 `

@@ -7,7 +7,10 @@ import pic3 from '../../../assets/ourPossibilities/n_v_item3.jpg';
 import pic4 from '../../../assets/ourPossibilities/n_v_item4.jpg';
 
 const items = [
-    {src: pic1, text: 'География работы компании "Кубаньтрейдинг": Краснодарский край, Ростовская область и Ставропольский край'},
+    {
+        src: pic1,
+        text: 'География работы компании "Кубаньтрейдинг": Краснодарский край, Ростовская область и Ставропольский край'
+    },
     {src: pic2, text: 'Поставки удобрений железнодорожным и авто - транспортом'},
     {src: pic3, text: 'Возможности хранения на крупных узловых точках до 50 тысяч тонн'},
     {src: pic4, text: 'Собственные линии фасовки удобрений'}
@@ -15,22 +18,30 @@ const items = [
 
 const OurPossibilities: React.FC = () => {
     return <Root id={'our_possibilities'}>
-        <Title>
-            Наши возможности
-        </Title>
-        <Wrapper>
-            {items.map((item, i) =>
-                <Item src={item.src} text={item.text} key={i}/>)
-            }
-        </Wrapper>
+        <Body>
+            <Title>
+                Наши возможности
+            </Title>
+            <Wrapper>
+                {items.map((item, i) =>
+                    <Item src={item.src} text={item.text} key={i}/>)
+                }
+            </Wrapper>
+        </Body>
     </Root>
 }
 
 export default OurPossibilities
 
 const Root = styled.div`
-width: 82vw;
+width: 100vw;
+display: flex;
+justify-content: center;
 margin-top: 40px;
+`
+const Body = styled.div`
+width: 82vw;
+
 `
 const Title = styled.div`
 width: calc(19vw - 10px);

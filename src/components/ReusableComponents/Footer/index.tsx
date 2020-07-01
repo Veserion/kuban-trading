@@ -1,31 +1,89 @@
+/**@jsx jsx*/
 import React from "react";
 import styled from "@emotion/styled";
+import {css, jsx} from '@emotion/core'
 import logo from '../../../assets/footer/f_logo.png'
 import address from '../../../assets/footer/f_adress.png'
-import mail from '../../../assets/footer/f_mail.png'
 import tel from '../../../assets/footer/f_tel.png'
+import mail from '../../../assets/footer/f_mail.png'
+import Contacts from './Contacts'
+import Link from './Link'
+
+const contacts = [
+    {img: address, text: 'г. Краснодар ул.Гимназическая, д.65/68, оф.204', href: '/'},
+    {img: tel, text: '8(861)245-85-55', href: 'tel:+78612458555'},
+    {img: mail, text: 'kubantreidind@mail.ru', href: 'mailto:kubantreidind@mail.ru'}
+]
+const links = [{href: 'about_company', text: 'О компании'},
+    {href: 'our_possibilities', text: 'Наши возможности'},
+    {href: 'fertilizers', text: 'Реализация удобрений'},
+    {href: 'partners', text: 'Наши партнеры'},
+    {href: 'contacts', text: 'Контакты'}
+]
 
 const Footer: React.FC = () => {
     return <Root>
         <Body>
-            <Logo/>
+            <Column>
+                <Logo href={'/'}/>
+            </Column>
+            <Column css={css`justify-content: space-evenly;`}>
+                {contacts.map((item, i) =>
+                    <Contacts key={i} img={item.img} text={item.text} href={item.href}/>)
+                }
+            </Column>
+            <Column
+                css={css`flex: 2; flex-wrap: wrap; @media(max-width: 700px){  width: 100%; flex-direction: row; justify-content: flex-start}`}>
+                {links.map((item, i) =>
+                    <Link key={i} href={item.href} text={item.text}/>)
+                }
+            </Column>
         </Body>
     </Root>
 }
 export default Footer
 
 const Root = styled.div`
-width: 100vw
+width: 100vw;
 background: #00a0e3;
 border-top: 3px solid rgb(0,125,190);
+display: flex;
+justify-content: center;
 `
 const Body = styled.div`
 width: 82vw;
-
+display: flex;
+@media(max-width: 700px){
+flex-wrap: wrap;
+//>div:nth-child(0){
+//  width: 50%;
+//  //flex: unset;
+//}
+//>div:nth-child(1){
+//  width: 50%;
+//  //flex: unset;
+//}
+//>div:nth-child(2){
+//  //width: 100%;
+//  width: 100%;
+//  flex: unset;
+//}
+}
+`
+const Column = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+flex: 1;
 `
 const Logo = styled.a`
-background-image: ${logo};
+background-image: url(${logo});
 background-size: 100% 100%;
-width: 6vw;
-height: 2.4315789474vw;
+width: 18vw;
+height: calc(2.4315789474vw * 3);
+@media(max-width: 700px){
+width: 21vw;
+height: calc(2.4315789474vw * 3.5);
+}
 `

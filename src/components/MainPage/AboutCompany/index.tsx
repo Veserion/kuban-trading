@@ -54,6 +54,9 @@ border-radius: 0 0 0 4px;
 @media(max-width: 900px){
   width: 40vw;
 }
+@media(max-width: 900px){
+  display: none;
+}
 `
 const Title = styled.div`
 width: calc(20vw - 10px);

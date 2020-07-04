@@ -26,6 +26,7 @@ border-radius: 0px 0px 5px 5px;
 }
 @media(max-width: 900px){
   width: 100%;
+  border-radius: 0;
   display: flex;
   >img{
     width: 40vw;
@@ -37,6 +38,9 @@ border-radius: 0px 0px 5px 5px;
 const Image = styled.img`
 width: 100%;
 border-radius: 4px 4px 0 0;
+@media(max-width: 900px){
+  border-radius: 5px 0px 0px 5px;
+}
 `
 const Text = styled.div`
 height: 7vw;
@@ -53,7 +57,9 @@ border-radius: 0px 0px 5px 5px;
   font-size: 14px;
 }
 @media(max-width: 900px){
-  width: 50%;
+  border-radius: 0px 5px 5px 0px;
+  margin-top: 0;
+  width: calc(50% - 10px);
   height: inherit;
   justify-content: center;
   font-size: 16px;

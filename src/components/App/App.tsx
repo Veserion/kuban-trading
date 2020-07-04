@@ -15,7 +15,10 @@ export default class App extends React.Component {
                 <Navbar/>
                 <Switch>
                     <Route exact path="/" component={MainPage}/>
-                    <Route exact path="/shop-page" component={ShopPage}/>
+                    {/*<Route exact path='/nitrogen_fertilizers' component={NitrogenFertilizers}/>*/}
+                    {/*<Route exact path='/phosphoric_fertilizers' component={PhosphoricFertilizers}/>*/}
+                    {/*<Route exact path='/potash_fertilizer' component={PotashFFertilizer}/>*/}
+                    {/*<Route exact path='/complex_fertilizers' component={ComplexFertilizers}/>*/}
                 </Switch>
                 <Footer/>
             </Root>

@@ -55,19 +55,6 @@ width: 82vw;
 display: flex;
 @media(max-width: 700px){
 flex-wrap: wrap;
-//>div:nth-child(0){
-//  width: 50%;
-//  //flex: unset;
-//}
-//>div:nth-child(1){
-//  width: 50%;
-//  //flex: unset;
-//}
-//>div:nth-child(2){
-//  //width: 100%;
-//  width: 100%;
-//  flex: unset;
-//}
 }
 `
 const Column = styled.div`

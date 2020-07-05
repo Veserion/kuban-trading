@@ -1,11 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "@emotion/styled";
 import {TDataTable} from "./index";
+import Form from './Form';
+import Dialog, {
+    DialogTitle,
+    DialogContent,
+    DialogFooter,
+    DialogButton,
+} from '@material/react-dialog';
 
 type TProps = {
     data: TDataTable
 }
 const Row: React.FC<TProps> = (props) => {
+    const [isOpenDialog, setOpenDialog] = useState(false)
+    const handleOpenDialog = () => setOpenDialog(true)
+    const handleCloseDialog = () => setOpenDialog(false)
     return <Root>
         <Label>
             {props.data.label}
@@ -14,10 +24,22 @@ const Row: React.FC<TProps> = (props) => {
             {props.data.description}
         </Description>
         <ButtonWrapper>
-            <Button>
-                ЗАКАЗАТЬ
+            <Button onClick={handleOpenDialog}>
+                {`ЗАКАЗАТЬ ${isOpenDialog}`}
+
             </Button>
         </ButtonWrapper>
+
+        <Dialog open={isOpenDialog}>
+            <DialogTitle>My Dialog</DialogTitle>
+            <DialogContent>
+                {/*<MyDialogContent />*/}
+            </DialogContent>
+            <DialogFooter>
+                <DialogButton onClick={handleCloseDialog} action='dismiss' >Dismiss</DialogButton>
+                <DialogButton onClick={handleCloseDialog} action='accept' isDefault >Accept</DialogButton>
+            </DialogFooter>
+        </Dialog>
     </Root>
 }
 export default Row
@@ -60,4 +82,6 @@ background: #00a0e3;
 display: flex;
 align-items: center;
 justify-content: center;
+user-select: none;
+cursor: pointer;
 `

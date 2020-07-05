@@ -12,6 +12,7 @@ export default class ShopPage extends React.Component<IProps> {
         const path = history.location.pathname
         const pageData: TDataPage = data[path]
         return <Root>
+            {console.log(path)}
             <Navigation currentPath={path}/>
             <Title>
                 {pageData.title}

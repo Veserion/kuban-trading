@@ -29,14 +29,14 @@ export default class Navbar extends React.Component<IProps, IState> {
     }
     handleCloseMenu = (event: any) => {
         const path = event.path || (event.composedPath && event.composedPath());
-        if (this.state.isOpenedMenu && !(path.some((element: any) => element.dataset && element.dataset.owner === 'search'))) {
+        if (this.state.isOpenedMenu && !(path.some((element: any) => element.dataset && element.dataset.owner === 'menu'))) {
             this.setState({isOpenedMenu: false})
         }
     }
     render() {
         const {isOpenedMenu} = this.state;
         const screenWidth = window.innerWidth
-        return <Root>
+        return <Root data-owner='menu'>
             <WrapperRoot>
                 <WrapperLogo>
                     <Logo src={logo}/>

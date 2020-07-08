@@ -3,11 +3,11 @@ import styled from "@emotion/styled";
 
 const Root = styled.div`
 display: none;
-@media(max-width: 758px){
+@media(max-width: 990px){
   display: block;
   position: absolute;
-  top: 10px;
-  margin: -1px 0;
+  top: 3vw;
+  left: 3vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

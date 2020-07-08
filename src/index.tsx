@@ -7,8 +7,10 @@ import "slick-carousel/slick/slick-theme.css";
 import "@material/react-dialog/dist/dialog.css";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <App />,
   document.getElementById('root')
 );
+
+
+// user: 'kubantr.mailservice@gmail.com',
+//     pass: 'Morgenshtern2010'

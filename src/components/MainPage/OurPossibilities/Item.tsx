@@ -43,7 +43,7 @@ border-radius: 4px 4px 0 0;
 }
 `
 const Text = styled.div`
-height: 7vw;
+height: 8vw;
 margin-top: -5px;
 display: flex;
 align-items: center;
@@ -51,7 +51,7 @@ text-align: center;
 font-size: 16px;
 color: #00a0e3;
 background: white;
-padding: 0 10px;
+padding: 5px 10px;
 border-radius: 0px 0px 5px 5px;
 @media(max-width: 1030px){
   font-size: 14px;

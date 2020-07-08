@@ -6,8 +6,7 @@ import 'rc-select/assets/index.css'
 
 const Root = styled.div`
 width: 100%;
-font-family: inherit;
-
+font-family: 'Roboto';
 .rc-select{
 width: 100%;
 height: 35px;
@@ -17,9 +16,10 @@ line-height: 138.2%;
 border: 1px solid darkgray;
 box-sizing: border-box;
 >div {
+  box-shadow: unset;
   :hover{
     border: unset;
-    mso-border-shadow: no;
+    box-shadow: unset;
   }
 }
 }
@@ -32,6 +32,7 @@ background: white;
     flex-direction: row;
     align-items: center;
 }
+
 `;
 
 interface IProps {
@@ -39,6 +40,7 @@ interface IProps {
     placeholder?: string
     onChange?: (e: any) => void
     css?: any
+    defaultValue?: string
 }
 
 interface IState {
@@ -48,7 +50,7 @@ interface IState {
 export default class Select extends React.Component<IProps, IState> {
 
     render() {
-        const { css: style, children, value, onChange, placeholder } = this.props;
+        const { css: style, children, value, onChange, placeholder, defaultValue } = this.props;
         return (
             <Root css={style}>
                 <RCSelect
@@ -56,6 +58,7 @@ export default class Select extends React.Component<IProps, IState> {
                     onChange={onChange}
                     placeholder={placeholder}
                     showArrow={true}
+                    defaultValue={defaultValue}
 
                 >
                     {children}
@@ -65,11 +68,4 @@ export default class Select extends React.Component<IProps, IState> {
     }
 }
 
-const Placeholder = styled.div`
-margin-top: 3.5px;
-font-weight: normal;
-font-size: 14px;
-line-height: 138.2%;
-color: #9D998E;
-`
 

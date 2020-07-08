@@ -6,7 +6,7 @@ export default class Menu extends React.Component {
     render() {
         return <Root>
             {menu.map(point =>
-                <MenuElement href={`#${point.href}`} key={point.href}>
+                <MenuElement href={`/#${point.href}`} key={point.href}>
                     {point.text}
                 </MenuElement>)
             }
@@ -22,7 +22,7 @@ const menu = [{href: 'about_company', text: 'о компании'},
     {href: 'contacts', text: 'контакты'}]
 
 const Root = styled.div`
-@media(min-width: 641px){
+@media(min-width: 991px){
   width: 100%;
   >a:nth-child(1){
     flex: 1;
@@ -40,18 +40,19 @@ const Root = styled.div`
     flex: 1;
   }
 }
-height: 32px;
+height: 38px;
 display: flex;
 align-items: center;
 background: rgb(0,161,233);
-@media(max-width: 758px){
+@media(max-width: 990px){
   width: auto;
   height: auto;
   flex-direction: column;
   position: absolute;
-  right: -10vw;
+  left: 0;
+  top: calc(6vw + 15px);
   align-items: flex-start;
-  z-index: 100000000;
+  z-index: 1;
 }
 `
 const MenuElement = styled.a`
@@ -67,7 +68,7 @@ background: rgb(0,161,233);
 @media(max-width: 867px){
   font-size: 13px;
 }
-@media(max-width: 758px){
+@media(max-width: 990px){
   width: 170px;
   padding: 8px 20px;
   border-right: 0;

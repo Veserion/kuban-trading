@@ -25,9 +25,16 @@ const Navigation: React.FC<TProps> = (props) => {
 export default Navigation
 
 const Root = styled.div`
-margin-top: 5vw;
+margin-top: 3vw;
 display: flex;
 justify-content: space-between;
 width: 82vw;
+@media(max-width: 650px){
+  flex-direction: column;
+  align-items: center;
+  >div {
+    margin: 10px 0;
+  }
+}
 `
 

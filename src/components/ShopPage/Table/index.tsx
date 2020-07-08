@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import {TDataTable} from './index'
+import {TDataTable} from '../index'
 import Row from './Row'
 type TProps = {
     data: TDataTable[]
@@ -15,5 +15,7 @@ export default Table
 const Root = styled.div`
 display: flex;
 flex-direction: column;
-
+border-bottom: 1px solid darkgray;
+margin-bottom: 3vw;
+background: white;
 `

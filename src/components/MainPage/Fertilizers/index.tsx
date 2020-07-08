@@ -70,10 +70,10 @@ display: block;
 }
 `
 const Title = styled.div`
-width: calc(40vw - 10px);
-height: 44px;
+width: calc(40vw - 20px);
+height: 38px;
+padding: 3px 10px;
 margin-left: 9vw;
-padding-left: 10px;
 display: flex;
 align-items: center;
 font-size: 24px;
@@ -85,7 +85,7 @@ border-radius: 5px 5px 0px 0px;
 }
 @media(max-width: 640px){
   margin-left: 0;
-  width: 40vw;
+  width: calc(100% - 20px);
 }
 `
 const Wrapper = styled.div`

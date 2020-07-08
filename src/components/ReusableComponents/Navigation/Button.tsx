@@ -7,7 +7,6 @@ type TProps = {
     active: boolean,
     href: string,
     text: string,
-    // color: string
 }
 const Button: React.FC<TProps> = (props) => {
     return <Root css={css(props.active
@@ -21,17 +20,27 @@ const Button: React.FC<TProps> = (props) => {
 export default Button
 
 const Root = styled.a`
-//flex-grow: 0.9;
 height: 6vw;
-flex-basis: 23%;
+width: calc(100% - 10px);
+padding: 0 5px;
+min-width: 125px;
+flex-basis: 22%;
 display: flex;
 justify-content: center;
 align-items: center;
+text-align: center;
 text-decoration: none;
 color: white;
-font-size: 16px;
+font-size: 18px;
 font-weight: bold;
+border-radius: 2px;
 @media(max-width: 1050px){
-  font-size: 14px;
+  font-size: 16px;
+}
+@media(max-width: 650px){
+  font-size: 18px;
+  margin: 5px 0;
+  padding: 10px 0px;
+  width: 100%;
 }
 `

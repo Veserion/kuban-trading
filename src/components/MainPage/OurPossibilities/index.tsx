@@ -44,9 +44,9 @@ width: 82vw;
 
 `
 const Title = styled.div`
-width: calc(19vw - 10px);
-height: 44px;
-padding-left: 10px;
+width: calc(19vw - 20px);
+min-height: 38px;
+padding: 3px 10px;
 display: flex;
 align-items: center;
 font-size: 24px;
@@ -57,7 +57,7 @@ border-radius: 5px 5px 0px 0px;
   font-size: 20px;
 }
 @media(max-width: 900px){
-  width: calc(40vw - 10px);
+  width: calc(100% - 20px);
 }
 `
 const Wrapper = styled.div`

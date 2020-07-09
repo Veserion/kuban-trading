@@ -23,6 +23,7 @@ display: block;
 border-radius: 0px 0px 5px 5px;
 @media(max-width: 1300px){
   width: 45%;
+  margin-bottom: 20px;
 }
 @media(max-width: 900px){
   width: 100%;

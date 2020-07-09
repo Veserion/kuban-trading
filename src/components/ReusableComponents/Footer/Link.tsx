@@ -9,7 +9,7 @@ type TProps = {
 const Link: React.FC<TProps> = (props) => {
     return <Root>
         <Circle/>
-        <Text href={`#${props.href}`}>
+        <Text href={`/#${props.href}`}>
             {props.text}
         </Text>
     </Root>
@@ -22,6 +22,10 @@ display: flex;
 align-items: center;
 justify-content: flex-start;
 height: 27%;
+@media(max-width: 750px){
+min-width: 120px;
+margin: 3px 0 3px 10px;
+}
 `
 const Circle = styled.div`
 height: 5px;
@@ -34,4 +38,8 @@ margin-left: 10px;
 font-size: 90%;
 text-decoration: none;
 color: white;
+@media(max-width: 750px){
+font-size: 16px;
+margin: 3px 0 3px 10px;
+}
 `

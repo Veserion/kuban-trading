@@ -33,10 +33,9 @@ const Footer: React.FC = () => {
                 }
             </Column>
             <Column
-                css={css`flex: 2; flex-wrap: wrap; @media(max-width: 700px){  width: 100%; flex-direction: row; justify-content: flex-start}`}>
+                css={css`${styles}`}>
                 {links.map((item, i) =>
-                    <Link key={i} href={item.href} text={item.text}/>)
-                }
+                    <Link key={i} href={item.href} text={item.text}/>)}
             </Column>
         </Body>
     </Root>
@@ -45,6 +44,7 @@ export default Footer
 
 const Root = styled.div`
 width: 100vw;
+padding: 10px 0;
 background: #00a0e3;
 border-top: 3px solid rgb(0,125,190);
 display: flex;
@@ -53,7 +53,7 @@ justify-content: center;
 const Body = styled.div`
 width: 82vw;
 display: flex;
-@media(max-width: 700px){
+@media(max-width: 750px){
 flex-wrap: wrap;
 }
 `
@@ -69,8 +69,19 @@ background-image: url(${logo});
 background-size: 100% 100%;
 width: 18vw;
 height: calc(2.4315789474vw * 3);
-@media(max-width: 700px){
-width: 21vw;
-height: calc(2.4315789474vw * 3.5);
+@media(max-width: 750px){
+width: 30vw;
+height: 12.157894737vw;
+}
+`
+const styles = css`
+flex: 2;
+flex-wrap: wrap;
+justify-content: flex-start;
+@media(max-width: 750px){
+width: 100%;
+min-width: 270px;
+flex-direction: row;
+justify-content: flex-start;
 }
 `

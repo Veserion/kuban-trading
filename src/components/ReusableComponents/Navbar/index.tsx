@@ -1,7 +1,5 @@
-/**@jsx jsx*/
 import React from 'react'
 import styled from '@emotion/styled'
-import {css, jsx} from '@emotion/core'
 import logo from '../../../assets/navbar/logo.png'
 import Menu from "./Menu";
 import Contacts from "./Contacts";
@@ -71,7 +69,9 @@ justify-content: space-between;
 align-items: flex-end;
 font-family: 'Roboto', sans-serif;
 position: relative;
-
+@media(max-width: 990px){
+  align-items: center ;
+}
 `
 const WrapperLogo = styled.a`
 width: calc(20vw - 16px);
@@ -105,5 +105,8 @@ flex-direction: column;
 align-items: flex-end;
 z-index: 0;
 position: relative;
-
+@media(max-width: 990px){
+  align-items: flex-end;
+  width: 40vw;
+}
 `

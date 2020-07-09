@@ -55,6 +55,7 @@ background: #00a0e3;
 border-radius: 5px 5px 0px 0px;
 @media(max-width: 1300px){
   font-size: 20px;
+  width: calc(36.9vw - 20px);
 }
 @media(max-width: 900px){
   width: calc(100% - 20px);

@@ -44,13 +44,23 @@ height: 38px;
 display: flex;
 align-items: center;
 background: rgb(0,161,233);
-@media(max-width: 990px){
+@media(max-width: 642px){
   width: auto;
   height: auto;
   flex-direction: column;
   position: absolute;
-  left: 0;
+  left: -51vw;
   top: calc(6vw + 15px);
+  align-items: flex-start;
+  z-index: 1;
+  }
+@media(max-width: 990px) and (min-width: 643px){
+  width: auto;
+  height: auto;
+  flex-direction: column;
+  position: absolute;
+  left: -51vw;
+  top:  calc(6vw + 15px);
   align-items: flex-start;
   z-index: 1;
 }

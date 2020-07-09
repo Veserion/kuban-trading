@@ -1,5 +1,5 @@
 /**@jsx jsx*/
-import React, {useState} from "react";
+import React from "react";
 import styled from "@emotion/styled";
 import {jsx, css} from '@emotion/core';
 import {Option} from 'rc-select'
@@ -103,7 +103,6 @@ export default class CustomForm extends React.Component<IProps, IState> {
 
 
     render() {
-        const {label} = this.props
         const {name, tel, inn, fertilizers, delivery, date, address, comment} = this.state
         return <Root onSubmit={this.handleSubmit}>
             <Row>

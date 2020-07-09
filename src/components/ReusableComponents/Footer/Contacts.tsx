@@ -26,17 +26,23 @@ export default Contacts
 const Root = styled.div`
 width: calc(100% - 20px);
 margin: 3px 10px 3px 10px;
+padding: 5px 0;
 display: flex;
 justify-content: flex-start;
 align-items: center;
-//max-height: calc(23% - 4px);
+@media(){
+
+}
 `
 const Image = styled.img`
-height: 100%;
+min-height: 15px;
 `
 const Text = styled.a`
 margin-left: 10px;
 font-size: 90%;
 text-decoration: none;
 color: white;
+@media(max-width: 750px){
+font-size: 16px;
+}
 `

@@ -6,8 +6,7 @@ import {TDataTable} from "../index";
 import CustomForm from './CustomForm';
 import Dialog, {
     DialogTitle,
-    DialogContent,
-    DialogFooter
+    DialogContent
 } from '@material/react-dialog';
 
 type TProps = {

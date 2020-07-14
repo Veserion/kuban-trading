@@ -19,15 +19,17 @@ margin-top: 20px;
 width: 300px;
 height: 20px;
 display: flex;
+//@media(max-width: 900px){
+//  width: 270px;
+//}
 `
 const Circle = styled.div`
 margin-top: 10px;
-//top: -40px;
 width: 15px;
 height: 15px;
 border-radius: 50%;
 background: white;
-@media(max-width: 640px){
+@media(max-width: 900px){
   background: black;
 }
 `
@@ -39,9 +41,9 @@ padding-bottom: 3px;
 border-bottom: 2px solid white;
 font-size: 17px;
 color: white;
-//text-align: center;
 text-decoration: none;
-@media(max-width: 640px){
+@media(max-width: 900px){
+  font-size: 20px;
   color: black;
   border-bottom: 2px solid black;
 }

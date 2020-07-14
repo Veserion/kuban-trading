@@ -11,26 +11,27 @@ import slide3 from '../../../assets/carousel/glav_slide3.jpg'
 export default class Carousel extends React.Component {
     render() {
         return <Root>
-            <Image/>
-            <Image2 src={background}/>
-            <Slider
-                css={css`@media(max-width: 990px){display: none;}`}
-                centerMode={false}
-                dots={false}
-                slidesToShow={1}
-                slidesToScroll={1}
-                autoplay={true}
-                autoplaySpeed={3000}
-                speed={999}
-                pauseOnDotsHover={true}
-                arrows={false}
-                infinite
-            >
-                {[slide1, slide2, slide3]
-                    .map((url, ind) => <CarouselImage src={url} key={ind}/>)}
-            </Slider>
-            <Image3 src={slide1}/>
-
+            <Wrapper>
+                <Image/>
+                <Image2 src={background}/>
+                <Slider
+                    css={css`@media(max-width: 990px){display: none;}`}
+                    centerMode={false}
+                    dots={false}
+                    slidesToShow={1}
+                    slidesToScroll={1}
+                    autoplay={true}
+                    autoplaySpeed={3000}
+                    speed={999}
+                    pauseOnDotsHover={true}
+                    arrows={false}
+                    infinite
+                >
+                    {[slide1, slide2, slide3]
+                        .map((url, ind) => <CarouselImage src={url} key={ind}/>)}
+                </Slider>
+                <Image3 src={slide1}/>
+            </Wrapper>
         </Root>
     }
 }
@@ -39,13 +40,19 @@ const Root = styled.div`
 width: 100vw;
 display: flex;
 justify-content: center;
+`
+const Wrapper = styled.div`
+width: 82%;
+max-width: 1170px;
+display: flex;
+justify-content: center;
 margin-bottom: -5px;
 .slick-slider {
-    width: 62vw;
+    width: 74.35897436%;
 }
 `
 const Image = styled.div`
-width: 20vw;
+width: 25.64102564%;
 min-height: calc(100% - 40px);
 background: rgb(245,247,246) url(${background}) no-repeat;
 background-size: 100%;

@@ -56,6 +56,7 @@ display: flex;
 @media(max-width: 750px){
 flex-wrap: wrap;
 }
+max-width: 1170px;
 `
 const Column = styled.div`
 display: flex;
@@ -67,8 +68,8 @@ flex: 1;
 const Logo = styled.a`
 background-image: url(${logo});
 background-size: 100% 100%;
-width: 18vw;
-height: calc(2.4315789474vw * 3);
+width: 150px;
+height: 60.789473685px;
 @media(max-width: 750px){
 width: 30vw;
 height: 12.157894737vw;

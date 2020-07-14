@@ -29,6 +29,7 @@ margin-top: 3vw;
 display: flex;
 justify-content: space-between;
 width: 82vw;
+max-width: 1170px;
 @media(max-width: 650px){
   flex-direction: column;
   align-items: center;

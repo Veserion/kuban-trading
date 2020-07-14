@@ -56,12 +56,15 @@ export default class Navbar extends React.Component<IProps, IState> {
 
 const Root = styled.div`
 width: 100vw;
+display: flex;
+justify-content: center;
 border-bottom: 2px solid rgb(0,161,233);
 box-sizing: border-box;
 z-index: 10;
 `
 const WrapperRoot = styled.div`
 width: 82vw;
+max-width: 1170px;
 height: 100%;
 padding: 0 9vw;
 display: flex;
@@ -74,7 +77,7 @@ position: relative;
 }
 `
 const WrapperLogo = styled.a`
-width: calc(20vw - 16px);
+width: calc(25.64102564% - 16px);
 height: calc(100% - 16px);
 padding: 8px;
 display: flex;
@@ -96,7 +99,7 @@ max-height: 80%;
 `
 const Wrapper = styled.div`
 @media(min-width: 991px){
-  width: 62vw;
+  width: 74.35897436%;
 }
 width: auto;
 height: 100%;

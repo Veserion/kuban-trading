@@ -36,15 +36,17 @@ display: flex;
 justify-content: center;
 `
 const Body = styled.div`
-width: 82vw;
+width: 82%;
+max-width: 1170px;
 margin-top: 40px;
 display: block;
 `
 const Wrapper = styled.div`
 display: flex;
+width: 100%;
 `
 const LeftColumn = styled.div`
-width: 20vw;
+width: 25.64102564%;
 display: block;
 background-color: white;
 border-radius: 0 0 0 4px;
@@ -56,7 +58,7 @@ border-radius: 0 0 0 4px;
 }
 `
 const Title = styled.div`
-width: calc(20vw - 20px);
+width: calc(25.64102564% - 20px);
 height: 38px;
 padding: 3px 10px;
 display: flex;
@@ -98,7 +100,7 @@ background-repeat: no-repeat;
 background-position: center;
 `
 const RightColumn = styled.div`
-width: calc(62vw - 10%);
+width: calc(74.35897436% - 10%);
 display: flex;
 padding: 40px 5% 0 5%;
 border-radius: 0 4px 4px 0;

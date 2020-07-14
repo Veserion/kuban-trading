@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
-import allPartners from '../../../assets/ourPartners/partners.png'
-import agr from '../../../assets/ourPartners/agrohimcentr_logo.jpg'
-import amm from '../../../assets/ourPartners/ammoni_logo.jpg'
-import ctk from '../../../assets/ourPartners/ctk_logo.jpg'
+import agr from '../../../assets/logos/agrohimcentr_logo.jpg'
+import amm from '../../../assets/logos/ammoni_logo.jpg'
+import ctk from '../../../assets/logos/ctk.jpg'
 import np2 from '../../../assets/ourPartners/n_p2.jpg'
 import np5 from '../../../assets/ourPartners/n_p5.jpg'
 import np6 from '../../../assets/ourPartners/n_p6.jpg'
@@ -18,7 +17,6 @@ const OurPartners: React.FC = () => {
             Наши партнеры
         </Title>
         <Body>
-            <Image src={allPartners}/>
             {images.map((logo, i) => <Logo src={logo} key={i}/>)}
         </Body>
     </Root>
@@ -28,6 +26,7 @@ export default OurPartners
 
 const Root = styled.div`
 width: 82vw;
+max-width: 1170px;
 margin-top: 40px;
 display: block;
 `
@@ -62,18 +61,12 @@ justify-content: center;
   align-items: center;
 }
 `
-const Image = styled.img`
-width: 80%;
-@media(max-width: 640px){
-  display: none;
-}
-`
 const Logo = styled.img`
-display: none;
-@media(max-width: 640px){
-  display: unset;
-  width: 100%;
-  height: unset;
-  vertical-align: middle;
+display: unset;
+width: 100%;
+height: unset;
+vertical-align: middle;
+@media(min-width: 900px){
+  
 }
 `

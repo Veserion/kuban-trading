@@ -17,6 +17,7 @@ export default class GoogleMap extends React.Component {
 
 const Root = styled.div`
 width: 82vw;
+max-width: 1170px;
 >iframe {
   width: 100%;
 }

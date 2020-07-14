@@ -43,25 +43,28 @@ export default class Fertilizers extends React.Component<any, any> {
                             info@kuban-trading.ru
                         </p>
                     </Text>
-                </Wrapper>
                 <Links>
                     {items.map((item, i) =>
                         <Link key={i} url={item.url} text={item.text}/>)
                     }
                 </Links>
+                </Wrapper>
             </Body>
         </Root>
     }
 }
 
 const Root = styled.div`
+width: 100vw;
 margin-top: 40px;
 display: flex;
 justify-content: center;
 `
 const Body = styled.div`
 display: block;
-@media(max-width: 640px){
+width: 82%;
+max-width: 1170px;
+@media(max-width: 900px){
   width: 82vw;
   display: flex;
   flex-direction: column;
@@ -70,10 +73,9 @@ display: block;
 }
 `
 const Title = styled.div`
-width: calc(40vw - 20px);
+width: calc(2.43902439% + 23.17073171% * 2 - 20px);
 height: 38px;
 padding: 3px 10px;
-margin-left: 9vw;
 display: flex;
 align-items: center;
 font-size: 24px;
@@ -81,65 +83,82 @@ color: white;
 background: #00a0e3;
 border-radius: 5px 5px 0px 0px;
 @media(max-width: 1300px){
+  width: calc(45% - 20px);
   font-size: 20px;
 }
-@media(max-width: 640px){
+@media(max-width: 900px){
   margin-left: 0;
   width: calc(100% - 20px);
 }
 `
 const Wrapper = styled.div`
-width: calc(100vw - 9vw);
-padding-left: 9vw;
+width: 100%;
 background-image: url(${bg});
 background-repeat:  no-repeat;
 background-size: 100% 100%;
-@media(max-width: 640px){
+@media(max-width: 900px){
   width: 82vw;
   background-image: none;
   padding-left: 0;
 }
 `
 const Text = styled.div`
-width: calc(40vw - 30px);
-padding: 40px 15px;
+width: calc(2.43902439% + 23.17073171% * 2 - 30px);
+padding: 40px 15px 30px 15px;
 background: white;
 opacity: .85;
 p{
   margin: 0;
 }
-@media(max-width: 640px){
+@media(max-width: 1300px){
+  width: calc(45% - 30px);
+}
+@media(max-width: 900px){
   padding: 20px 15px 10px 15px;
   width: calc(100% - 30px);
 }
 `
 const Links = styled.div`
 margin-top: -200px;
-margin-right: 4vw;
-position: absolute;
+padding-bottom: 30px;
+width: auto;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-end;
+position: relative;
 right: 0;
+@media(max-width: 1200px){
+  margin-top: -230px;
+  padding-bottom: 60px;
+  >div{
+    margin-right: 5% !important;
+  }
+}
 >div:nth-child(1){
-  margin-left: -40px;
+  margin-right: 40px;
 }
 >div:nth-child(2){
-  margin-left: -80px;
+  margin-right: 80px;
 }
 >div:nth-child(3){
-  margin-left: -120px;
+  margin-right: 120px;
 }
 >div:nth-child(4){
-  margin-left: -160px;
+  margin-right: 160px;
 }
-@media(max-width: 640px){
-  margin-top: 1vw;
-  margin-bottom: 5vw;
-  padding: 0px 20px;
-  width: calc(100% - 40px);
-  background-image: none;
+@media(max-width: 900px){
+  width: 100%;
+  margin-top: 3vw;
+  margin-bottom: 4vw;
+  padding-bottom: 30px;
+  position: unset;
+  display: flex;
+  align-items: center;
   color: black;
+  background-image: none;
   background-repeat: no-repeat;
   background-origin: content-box;
-  position: unset;
   >div:nth-child(1){
     margin-left: 0px;
   }

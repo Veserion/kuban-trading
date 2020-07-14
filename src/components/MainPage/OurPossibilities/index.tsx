@@ -40,11 +40,11 @@ justify-content: center;
 margin-top: 40px;
 `
 const Body = styled.div`
-width: 82vw;
-
+width: 82%;
+max-width: 1170px;
 `
 const Title = styled.div`
-width: calc(19vw - 20px);
+width: calc(23.17073171% - 20px);
 min-height: 38px;
 padding: 3px 10px;
 display: flex;
@@ -53,7 +53,7 @@ font-size: 24px;
 color: white;
 background: #00a0e3;
 border-radius: 5px 5px 0px 0px;
-@media(max-width: 1300px){
+@media(max-width: 1390px){
   font-size: 20px;
   width: calc(36.9vw - 20px);
 }

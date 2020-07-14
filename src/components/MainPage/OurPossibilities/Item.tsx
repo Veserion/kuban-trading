@@ -17,11 +17,12 @@ const Item: React.FC<TProps> = (props) => {
 export default Item
 
 const Root = styled.div`
-width: 19vw;
-min-width: 265px
+width: 23.17073171%;
+min-width: 275px;
+min-width: 265px;
 display: block;
 border-radius: 0px 0px 5px 5px;
-@media(max-width: 1300px){
+@media(max-width: 1390px){
   width: 45%;
   margin-bottom: 20px;
 }

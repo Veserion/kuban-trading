@@ -2,6 +2,16 @@ import React from "react";
 import styled from "@emotion/styled";
 import bg from '../../../assets/fertilizers/block3_background.jpg'
 import Link from './Link'
+import CustomForm from '../../ShopPage/Table/CustomForm';
+import Dialog, {
+    DialogTitle,
+    DialogContent
+} from '@material/react-dialog';
+import {css, jsx} from "@emotion/core";
+
+interface IState {
+    isOpenDialog: boolean
+}
 
 const items = [
     {url: 'nitrogen_fertilizers', text: 'Азотные удобрения'},
@@ -9,7 +19,26 @@ const items = [
     {url: 'potash_fertilizer', text: 'Калийные удобрения'},
     {url: 'complex_fertilizers', text: 'Комплексные удобрения'}
 ]
-export default class Fertilizers extends React.Component<any, any> {
+export default class Fertilizers extends React.Component<any, IState> {
+    state = {isOpenDialog: false}
+
+    handleCloseDialog = () => this.setState({isOpenDialog: false})
+    handleCloseDialog2 = (event: any) => {
+        const path = event.path || (event.composedPath && event.composedPath());
+        if (this.state.isOpenDialog && !(path.some((element: any) => element.dataset && element.dataset.owner === 'dialog'))) {
+            this.handleCloseDialog()
+        }
+    }
+    handleOpenDialog = () => this.setState({isOpenDialog: true})
+
+    componentDidMount() {
+        document.addEventListener('mousedown', this.handleCloseDialog2)
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleCloseDialog2)
+    }
+
     render() {
         return <Root id={'fertilizers'}>
             <Body>
@@ -39,16 +68,28 @@ export default class Fertilizers extends React.Component<any, any> {
                             объемов поставки и периодичности закупок.
                         </p>
                         <p>
-                            По всем имеющимся вопросам, обращайтесь по телефону 8(861)245-85-55 или пишите на почту
-                            info@kuban-trading.ru
+                            По всем имеющимся вопросам, обращайтесь по телефону <br/>
+                            <a href="tel:+78612458555">8(861)245-85-55</a> или пишите на почту &nbsp;
+                            <a href="mailto:info@kuban-trading.ru">
+                                info@kuban-trading.ru
+                            </a>
                         </p>
+                        <Button onClick={this.handleOpenDialog}>
+                            {'ОТПРАВИТЬ ЗАЯВКУ'}
+                        </Button>
                     </Text>
-                <Links>
-                    {items.map((item, i) =>
-                        <Link key={i} url={item.url} text={item.text}/>)
-                    }
-                </Links>
+                    <Links>
+                        {items.map((item, i) =>
+                            <Link key={i} url={item.url} text={item.text}/>)
+                        }
+                    </Links>
                 </Wrapper>
+                <Dialog open={this.state.isOpenDialog} data-owner='dialog' css={css`${styles}`}>
+                    <DialogTitle>Отправить заявку на расчет стоимости / доставки</DialogTitle>
+                    <DialogContent>
+                        <CustomForm label={''} handleCloseDialog={this.handleCloseDialog}/>
+                    </DialogContent>
+                </Dialog>
             </Body>
         </Root>
     }
@@ -56,13 +97,42 @@ export default class Fertilizers extends React.Component<any, any> {
 
 const Root = styled.div`
 width: 100vw;
+height: calc(100% - 200px);
 margin-top: 40px;
+margin-bottom: -100px;
 display: flex;
 justify-content: center;
+#mdc-dialog{
+  z-index: 10;
+}
+.mdc-dialog__surface {
+    width: 60vw;
+    min-height: 60vh;
+    max-width: unset;
+    min-width: unset;
+    max-height: unset;
+    min-height: unset;
+    display: flex;
+    align-items: center;
+}
+.mdc-dialog__content{
+  width: 100%;
+}
+.mdc-dialog--content{
+@media(max-width: 990px){ 
+  height: 100vh;
+  width: 100vw;
+}
+}
+@media(max-width: 834px){
+  flex-direction: column;
+  align-items: flex-start;
+}
 `
 const Body = styled.div`
 display: block;
 width: 82%;
+height: calc(100% - 200px);
 max-width: 1170px;
 @media(max-width: 900px){
   width: 82vw;
@@ -93,6 +163,7 @@ border-radius: 5px 5px 0px 0px;
 `
 const Wrapper = styled.div`
 width: 100%;
+height:  calc(100%);
 background-image: url(${bg});
 background-repeat:  no-repeat;
 background-size: 100% 100%;
@@ -104,6 +175,7 @@ background-size: 100% 100%;
 `
 const Text = styled.div`
 width: calc(2.43902439% + 23.17073171% * 2 - 30px);
+height: calc(100% - 70px);
 padding: 40px 15px 30px 15px;
 background: white;
 opacity: .85;
@@ -119,18 +191,15 @@ p{
 }
 `
 const Links = styled.div`
-margin-top: -200px;
-padding-bottom: 30px;
 width: auto;
+position: relative;
+bottom: 230px;
+right: 0;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: flex-end;
-position: relative;
-right: 0;
 @media(max-width: 1200px){
-  margin-top: -230px;
-  padding-bottom: 60px;
   >div{
     margin-right: 5% !important;
   }
@@ -170,6 +239,36 @@ right: 0;
   }
   >div:nth-child(4){
     margin-left: 0px;
+  }
+}
+`
+const Button = styled.div`
+width: auto;
+height: 40px;
+margin-top: 50px;
+min-width: 90px;
+background: #00a0e3;
+display: flex;
+align-items: center;
+justify-content: center;
+user-select: none;
+color: white;
+font-weight: bold;
+cursor: pointer;
+z-index: 100;
+opacity: 1.1;
+@media(max-width: 834px){
+  min-width: unset;
+  width: 100px;
+  padding: 5px 10px;
+  border-radius: 2px;
+}
+`
+const styles = css`
+@media(max-width: 798px){
+.mdc-dialog__surface{
+  width: 100vw;
+  height: 100vh;
   }
 }
 `

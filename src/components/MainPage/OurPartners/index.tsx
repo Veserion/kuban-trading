@@ -2,22 +2,38 @@ import React from "react";
 import styled from "@emotion/styled";
 import agr from '../../../assets/logos/agrohimcentr_logo.jpg'
 import amm from '../../../assets/logos/ammoni_logo.jpg'
+import acr from '../../../assets/logos/acron.jpg'
+import agrvis from '../../../assets/logos/agrvis.jpg'
 import ctk from '../../../assets/logos/ctk.jpg'
-import np2 from '../../../assets/ourPartners/n_p2.jpg'
-import np5 from '../../../assets/ourPartners/n_p5.jpg'
-import np6 from '../../../assets/ourPartners/n_p6.jpg'
-import np8 from '../../../assets/ourPartners/n_p8.jpg'
 import phos from '../../../assets/ourPartners/phosagro_logo.jpg'
+import eurchem from '../../../assets/logos/eurochem.jpeg'
+import belarkal from '../../../assets/logos/belaruskaliy.jpg'
+import minud from '../../../assets/logos/minudobreniya.jpeg'
 
-const images = [agr, amm, ctk, np2, np5, np6, np8, phos]
+const images: string[] = [phos, belarkal, minud, agr, amm, ctk, eurchem, acr, agrvis,]
+const hrefs: string[] = ['https://www.phosagro.ru/', 'https://kali.by/', 'http://www.minudo.ru/',
+    'https://www.stavagroland.ru/', 'https://www.ammoni.ru/', '',
+    'https://www.eurochemgroup.com/ru/', 'https://www.acron.ru/', 'https://www.zao-agrokomplex.ru',
+]
+
+interface ImgWithHrefs {
+    img: string,
+    href: string
+}
+
+const items = images.reduce((acc, img, i) =>
+    [...acc, {img: img, href: hrefs[i]}], [] as Array<ImgWithHrefs>)
 
 const OurPartners: React.FC = () => {
     return <Root>
+        {console.log('items', items)}
         <Title>
             Наши партнеры
         </Title>
         <Body>
-            {images.map((logo, i) => <Logo src={logo} key={i}/>)}
+            {items.map((item, i) => <a href={item.href} key={i}>
+                <Logo src={item.img} key={i}/>
+            </a>)}
         </Body>
     </Root>
 }
@@ -31,7 +47,7 @@ margin-top: 40px;
 display: block;
 `
 const Title = styled.div`
-width: calc(19vw - 10px);
+width: calc(2.43902439% + 23.17073171% * 2 - 20px);
 min-height: 38px;
 padding: 3px 10px;
 display: flex;
@@ -41,6 +57,7 @@ color: white;
 background: #00a0e3;
 border-radius: 5px 5px 0px 0px;
 @media(max-width: 1300px){
+  width: calc(45% - 20px);
   font-size: 20px;
 }
 @media(max-width: 900px){
@@ -52,7 +69,9 @@ const Body = styled.div`
 width: 100%;
 margin-top: 20px;
 display: flex;
-justify-content: center;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: center;
 @media(max-width: 640px){
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -66,7 +85,13 @@ display: unset;
 width: 100%;
 height: unset;
 vertical-align: middle;
-@media(min-width: 900px){
-  
+filter: grayscale(100%);
+:hover {
+  filter: unset;
+}
+@media(min-width: 640px){
+  width: 240px;
+  height: auto;
+  margin: 30px;
 }
 `

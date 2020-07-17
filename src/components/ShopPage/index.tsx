@@ -54,7 +54,6 @@ flex-direction: column;
 align-items: center;
 `
 const Title = styled.div`
-margin-top: 30px;
 padding: 8px 10px;
 font-size: 20px;
 text-align: center;

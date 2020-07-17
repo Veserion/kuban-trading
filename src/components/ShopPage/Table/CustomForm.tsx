@@ -7,7 +7,7 @@ import Select from './Select'
 import emailjs from 'emailjs-com';
 
 interface IProps {
-    label: string,
+    label?: string,
     handleCloseDialog: () => void
 }
 
@@ -29,12 +29,13 @@ interface IFert {
 }
 
 export default class CustomForm extends React.Component<IProps, IState> {
+
     state: IState = {
         name: '',
         tel: '',
         inn: '',
         fertilizers: [{
-            fertilizer: this.props.label,
+            fertilizer: this.props.label || '',
             packaging: '',
             weight: ''
         }],
@@ -246,14 +247,15 @@ export default class CustomForm extends React.Component<IProps, IState> {
             </Row>
 
 
-            <Row>
+            <Row css={css`margin-top: 10px; margin-bottom: -19px;`}>
                 <Column></Column>
                 <Column>
                     <Input type="submit" value={'ОТПРАВИТЬ ЗАЯВКУ'}
                            css={css`margin: 10px 0px; background: #00a0e3; 
-                           border: none; color: white; font-weight: bold; cursor: pointer;`}/>
+                           border: none; color: white; font-weight: bold; cursor: pointer;`}
+                    />
                 </Column>
-                <Column>
+                <Column css={css`justify-content: center;`}>
                     <Button onClick={this.props.handleCloseDialog}>
                         ЗАКРЫТЬ
                     </Button>
@@ -324,7 +326,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 color: white;
-font-size: 13px;
+font-size: 14px;
 text-align: center;
 font-weight: bold;
 background: #00a0e3;
@@ -332,6 +334,7 @@ cursor: pointer;
 `
 const Comment = styled.textarea`
 width: calc(100% - 20px);
+box-sizing: border-box;
 margin: -5px 10px;
 height: 100px;
 `

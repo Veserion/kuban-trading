@@ -7,6 +7,7 @@ import background from '../../../assets/carousel/b1l.jpg';
 import slide1 from '../../../assets/carousel/glav_slide1.jpg'
 import slide2 from '../../../assets/carousel/glav_slide2.jpg'
 import slide3 from '../../../assets/carousel/glav_slide3.jpg'
+import spb from '../../../assets/logos/spb.png'
 
 export default class Carousel extends React.Component {
     render() {
@@ -14,6 +15,7 @@ export default class Carousel extends React.Component {
             <Wrapper>
                 <Image/>
                 <Image2 src={background}/>
+                <Spb href={'https://spimex.com/'}/>
                 <Slider
                     css={css`@media(max-width: 990px){display: none;}`}
                     centerMode={false}
@@ -77,4 +79,24 @@ display: none;
 const CarouselImage = styled.img`
 width: 62vw;
 height: 154%;
+`
+const Spb = styled.a`
+position: absolute;
+left: calc((82vw * 0.2564102564 - 13vw)/2 + 8vw);
+top: 28vw;
+width: 14vw;
+height: 2.03vw;
+background-image: url(${spb});
+background-size: contain;
+background-repeat: no-repeat;
+@media(max-width: 650px){
+  top: calc(20vw + 80px);
+}
+@media(min-width: 1427px){
+  left: calc((100vw - 1170px) / 2 + 50px);
+  top: 370px;
+  width: 200px;
+  height: 29px;
+  background-size: contain;
+}
 `

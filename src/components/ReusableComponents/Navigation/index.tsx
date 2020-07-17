@@ -26,6 +26,7 @@ export default Navigation
 
 const Root = styled.div`
 margin-top: 3vw;
+margin-bottom: 3vw;
 display: flex;
 justify-content: space-between;
 width: 82vw;

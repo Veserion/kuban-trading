@@ -10,16 +10,18 @@ import OurPartners from './OurPartners';
 import GoogleMap from "./GoogleMap";
 import {Parallax} from "react-parallax";
 import bg from '../../assets/back.jpg'
+import Navigation from "../ReusableComponents/Navigation";
 
 export default class MainPage extends React.Component {
     render() {
         return <Root>
             <Wrapper>
                 <Carousel/>
+                <Navigation currentPath={'/'}/>
                 <Parallax bgImage={bg} strength={500} css={css`width: 100vw; display: flex; justify-content: center;`}>
                     <AboutCompany/>
-                    <OurPossibilities/>
                     <Fertilizers/>
+                    <OurPossibilities/>
                 </Parallax>
                 <OurPartners/>
                 <GoogleMap/>
@@ -38,4 +40,10 @@ max-width: 1170px;
 display: flex;
 flex-direction: column;
 align-items: center;
+justify-content: center;
+.react-parallax-content{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
 `

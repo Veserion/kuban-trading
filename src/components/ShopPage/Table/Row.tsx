@@ -58,23 +58,26 @@ display: flex;
 border-left: 1px solid darkgrey;
 border-right: 1px solid darkgrey;
 box-sizing: border-box;
+#mdc-dialog{
+  z-index: 10;
+}
 .mdc-dialog__surface {
-    width: 60vw;
-    height: 80vh;
-    max-width: unset;
-    min-width: unset;
-    max-height: unset;
-    min-height: unset;
-    display: flex;
-    align-items: center;
+width: 60vw;
+min-height: 60vh;
+max-width: unset;
+min-width: unset;
+max-height: unset;
+min-height: unset;
+display: flex;
+align-items: center;
 }
 .mdc-dialog__content{
   width: 100%;
 }
 .mdc-dialog--content{
 @media(max-width: 990px){ 
-  height: 90vh;
-  width: 82vw;
+  height: 100vh;
+  width: 100vw;
 }
 }
 @media(max-width: 834px){

@@ -94,7 +94,6 @@ export default class CustomForm extends React.Component<IProps, IState> {
         Комментарий к заказу: ${this.state.comment}`,
         }
         e.preventDefault();
-        console.log(this.state)
         emailjs.send('default_service', 'submitting_the_completed_form', templateParams, 'user_0onN8wEZpFQhKo8Z9dQhA')
             .then((result) => {
                 this.props.handleNotification('success', 'Ваша заявка обрабатывается.')
@@ -102,7 +101,6 @@ export default class CustomForm extends React.Component<IProps, IState> {
             }, (error) => {
                 this.props.handleNotification('error', 'Возникла ошибка. Повторите попытку.')
             });
-        this.props.handleNotification('success', 'Ваша заявка обрабатывается.')
     }
 
 

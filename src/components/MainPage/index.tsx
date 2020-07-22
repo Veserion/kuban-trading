@@ -38,18 +38,15 @@ export default class MainPage extends React.Component<{}, IState> {
     handleOpenDialog = () => this.setState({isOpenDialog: true})
 
     handleNotification = (type: string, message: string) => {
-        return () => {
-            switch (type) {
-                case 'success':
-                    NotificationManager.success(message, '');
-                    console.log('success')
-                    break;
-                case 'error':
-                    NotificationManager.error(message, 3000);
-                    console.log('error')
-                    break;
-            }
-            NotificationManager.error(message, 3000);
+        switch (type) {
+            case 'success':
+                NotificationManager.success(message, '');
+                console.log('success')
+                break;
+            case 'error':
+                NotificationManager.error(message, 3000);
+                console.log('error')
+                break;
         }
     }
 
@@ -94,6 +91,9 @@ const Root = styled.div`
 display: flex;
 #mdc-dialog{
   z-index: 10;
+}
+.notification-success{
+    background: #00a0e3;
 }
 .mdc-dialog__surface {
     width: 60vw;

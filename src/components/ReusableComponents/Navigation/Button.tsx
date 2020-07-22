@@ -34,6 +34,9 @@ color: white;
 font-size: 18px;
 font-weight: bold;
 border-radius: 2px;
+:hover {
+  background: #00a0e3;
+}
 @media(max-width: 1050px){
   font-size: 16px;
 }

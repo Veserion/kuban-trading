@@ -75,6 +75,9 @@ text-decoration: none;
 color: white;
 border-right: 2px solid rgb(0,125,190);
 background: rgb(0,161,233);
+:hover {
+  color: black;
+}
 @media(max-width: 867px){
   font-size: 13px;
 }

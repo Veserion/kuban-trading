@@ -2,12 +2,17 @@ import React from "react";
 import styled from "@emotion/styled";
 import {TDataTable} from '../index'
 import Row from './Row'
+
 type TProps = {
-    data: TDataTable[]
+    data: TDataTable[],
+    handleNotification: (type: string, message: string) => void
+
 }
 const Table: React.FC<TProps> = (props) => {
     return <Root>
-        {props.data.map((item, i) => <Row key={i} data={item}/>)}
+        {props.data.map((item, i) =>
+            <Row key={i} data={item} handleNotification={props.handleNotification}/>
+        )}
     </Root>
 }
 export default Table

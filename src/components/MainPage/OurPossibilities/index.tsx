@@ -2,29 +2,34 @@ import React from "react";
 import styled from '@emotion/styled';
 import Item from './Item';
 import pic1 from '../../../assets/ourPossibilities/n_v_item1.png';
-import pic2 from '../../../assets/ourPossibilities/n_v_item2.jpg';
-import pic3 from '../../../assets/ourPossibilities/n_v_item3.jpg';
-import pic4 from '../../../assets/ourPossibilities/n_v_item4.jpg';
+import pic2 from '../../../assets/ourPossibilities/trucking.png';
+import pic3 from '../../../assets/ourPossibilities/jhd.jpg';
+import pic4 from '../../../assets/ourPossibilities/sklad.jpg';
 
+const titleItem = {
+    src: pic1,
+    text: 'География работы компании "Кубаньтрейдинг": Краснодарский край, Ростовская область и Ставропольский край'
+}
 const items = [
-    {
-        src: pic1,
-        text: 'География работы компании "Кубаньтрейдинг": Краснодарский край, Ростовская область и Ставропольский край'
-    },
-    {src: pic2, text: 'Поставки удобрений железнодорожным и авто - транспортом'},
-    {src: pic3, text: 'Возможности хранения на крупных узловых точках до 50 тысяч тонн'},
-    {src: pic4, text: 'Собственные линии фасовки удобрений'}
+    {src: pic3, text: 'Поставки удобрений железнодорожным транспортом', delivery: 'ж/д транспортом'},
+    {src: pic2, text: 'Поставки удобрений авто - транспортом', delivery: 'автотранспортом транспортом'},
+    {src: pic4, text: 'Возможность самовывоза со склада', delivery: 'со склада'}
 ]
 
-const OurPossibilities: React.FC = () => {
+interface IProps {
+    handleOpenDialog: () => void
+}
+
+const OurPossibilities: React.FC<IProps> = (props) => {
     return <Root id={'our_possibilities'}>
         <Body>
             <Title>
                 Наши возможности
             </Title>
-            <Wrapper>
+            <Wrapper onClick={props.handleOpenDialog}>
+                <Item src={titleItem.src} text={titleItem.text}/>
                 {items.map((item, i) =>
-                    <Item src={item.src} text={item.text} key={i}/>)
+                    <Item src={item.src} text={item.text} key={i} handleOpenDialog={props.handleOpenDialog}/>)
                 }
             </Wrapper>
         </Body>

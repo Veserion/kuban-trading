@@ -19,9 +19,6 @@ margin-top: 20px;
 width: 300px;
 height: 20px;
 display: flex;
-//@media(max-width: 900px){
-//  width: 270px;
-//}
 `
 const Circle = styled.div`
 margin-top: 10px;
@@ -40,10 +37,11 @@ padding-left: 10px;
 padding-bottom: 3px;
 border-bottom: 2px solid white;
 font-size: 17px;
+font-weight: bold;
 color: white;
 text-decoration: none;
 @media(max-width: 900px){
-  font-size: 20px;
+  font-size: 18px;
   color: black;
   border-bottom: 2px solid black;
 }

@@ -8,7 +8,8 @@ import emailjs from 'emailjs-com';
 
 interface IProps {
     label?: string,
-    handleCloseDialog: () => void
+    handleCloseDialog: () => void,
+    handleNotification: (type: string, message: string) => void
 }
 
 interface IState {
@@ -96,10 +97,12 @@ export default class CustomForm extends React.Component<IProps, IState> {
         console.log(this.state)
         emailjs.send('default_service', 'submitting_the_completed_form', templateParams, 'user_0onN8wEZpFQhKo8Z9dQhA')
             .then((result) => {
-                alert('Ваша заявка обрабатывается.')
+                this.props.handleNotification('success', 'Ваша заявка обрабатывается.')
+                this.props.handleCloseDialog()
             }, (error) => {
-                alert('Возникла ошибка. Повторите попытку.')
+                this.props.handleNotification('error', 'Возникла ошибка. Повторите попытку.')
             });
+        this.props.handleNotification('success', 'Ваша заявка обрабатывается.')
     }
 
 
@@ -184,16 +187,14 @@ export default class CustomForm extends React.Component<IProps, IState> {
                             Упаковки:
                         </Subtitle>
                         <Input type="text" value={fertilizers[i].packaging}
-                               onChange={(e) => this.handleChangePackaging(e, i)}
-                               required={true}/>
+                               onChange={(e) => this.handleChangePackaging(e, i)}/>
                     </Column>
                     <Column>
                         <Subtitle>
                             Объём (в тоннах):
                         </Subtitle>
                         <Input type="text" value={fertilizers[i].weight}
-                               onChange={(e) => this.handleChangeWeight(e, i)}
-                               required={true}/>
+                               onChange={(e) => this.handleChangeWeight(e, i)}/>
 
                     </Column>
                 </Row>)}
@@ -229,13 +230,13 @@ export default class CustomForm extends React.Component<IProps, IState> {
                     <Subtitle>
                         Срок доставки:
                     </Subtitle>
-                    <Input type="text" value={date} onChange={this.handleChangeDate} required={true}/>
+                    <Input type="text" value={date} onChange={this.handleChangeDate}/>
                 </Column>
                 <Column>
                     <Subtitle>
                         Адрес или ж/д станция:
                     </Subtitle>
-                    <Input type="text" value={address} onChange={this.handleChangeAddress} required={true}/>
+                    <Input type="text" value={address} onChange={this.handleChangeAddress}/>
                 </Column>
             </Row>
 

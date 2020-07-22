@@ -10,7 +10,9 @@ import Dialog, {
 } from '@material/react-dialog';
 
 type TProps = {
-    data: TDataTable
+    data: TDataTable,
+    handleNotification: (type: string, message: string) => void
+
 }
 const Row: React.FC<TProps> = (props) => {
     const [isOpenDialog, setOpenDialog] = useState(false)
@@ -22,7 +24,6 @@ const Row: React.FC<TProps> = (props) => {
             handleCloseDialog()
         }
     }
-
     useEffect(() => {
         document.addEventListener('mousedown', handleCloseDialog2)
         return () => document.removeEventListener('mousedown', handleCloseDialog2)
@@ -45,7 +46,8 @@ const Row: React.FC<TProps> = (props) => {
         <Dialog open={isOpenDialog} data-owner='dialog' css={css`${styles}`}>
             <DialogTitle>Отправить заявку на расчет стоимости / доставки</DialogTitle>
             <DialogContent>
-                <CustomForm label={props.data.label} handleCloseDialog={handleCloseDialog}/>
+                <CustomForm label={props.data.label} handleCloseDialog={handleCloseDialog}
+                            handleNotification={props.handleNotification}/>
             </DialogContent>
         </Dialog>
     </Root>

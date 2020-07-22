@@ -7,11 +7,28 @@ import Table from './Table'
 import bg from "../../assets/back.jpg";
 import {css, jsx} from "@emotion/core";
 import {Parallax} from "react-parallax";
+import {NotificationManager, NotificationContainer} from "react-notifications";
 
 interface IProps extends RouteComponentProps {
 }
 
 export default class ShopPage extends React.Component<IProps> {
+    handleNotification = (type: string, message: string) => {
+        return () => {
+            switch (type) {
+                case 'success':
+                    NotificationManager.success(message, '');
+                    console.log('success')
+                    break;
+                case 'error':
+                    NotificationManager.error(message, 3000);
+                    console.log('error')
+                    break;
+            }
+            NotificationManager.error(message, 3000);
+        }
+    }
+
     render() {
         const {history} = this.props
         const path = history.location.pathname
@@ -36,8 +53,9 @@ export default class ShopPage extends React.Component<IProps> {
                     <Subtitle>
                         {`В данной таблице представлены ${pageData.title} которые можно заказать в компании Кубань Трейдинг`}
                     </Subtitle>
-                    <Table data={pageData.tableRows}/>
+                    <Table data={pageData.tableRows} handleNotification={this.handleNotification}/>
                 </Wrapper>
+                <NotificationContainer/>
             </Root>
         </Parallax>
     }

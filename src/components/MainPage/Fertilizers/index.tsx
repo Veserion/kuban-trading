@@ -2,16 +2,6 @@ import React from "react";
 import styled from "@emotion/styled";
 import bg from '../../../assets/fertilizers/block3_background.jpg'
 import Link from './Link'
-import CustomForm from '../../ShopPage/Table/CustomForm';
-import Dialog, {
-    DialogTitle,
-    DialogContent
-} from '@material/react-dialog';
-import {css, jsx} from "@emotion/core";
-
-interface IState {
-    isOpenDialog: boolean
-}
 
 const items = [
     {url: 'nitrogen_fertilizers', text: 'Азотные удобрения'},
@@ -19,26 +9,10 @@ const items = [
     {url: 'potash_fertilizer', text: 'Калийные удобрения'},
     {url: 'complex_fertilizers', text: 'Комплексные удобрения'}
 ]
-export default class Fertilizers extends React.Component<any, IState> {
-    state = {isOpenDialog: false}
-
-    handleCloseDialog = () => this.setState({isOpenDialog: false})
-    handleCloseDialog2 = (event: any) => {
-        const path = event.path || (event.composedPath && event.composedPath());
-        if (this.state.isOpenDialog && !(path.some((element: any) => element.dataset && element.dataset.owner === 'dialog'))) {
-            this.handleCloseDialog()
-        }
-    }
-    handleOpenDialog = () => this.setState({isOpenDialog: true})
-
-    componentDidMount() {
-        document.addEventListener('mousedown', this.handleCloseDialog2)
-    }
-
-    componentWillUnmount() {
-        document.removeEventListener('mousedown', this.handleCloseDialog2)
-    }
-
+interface IProps {
+    handleOpenDialog: () => void
+}
+export default class Fertilizers extends React.Component<IProps, {}> {
     render() {
         return <Root id={'fertilizers'}>
             <Body>
@@ -74,7 +48,7 @@ export default class Fertilizers extends React.Component<any, IState> {
                                 info@kuban-trading.ru
                             </a>
                         </p>
-                        <Button onClick={this.handleOpenDialog}>
+                        <Button onClick={this.props.handleOpenDialog}>
                             {'ОТПРАВИТЬ ЗАЯВКУ'}
                         </Button>
                     </Text>
@@ -84,12 +58,6 @@ export default class Fertilizers extends React.Component<any, IState> {
                         }
                     </Links>
                 </Wrapper>
-                <Dialog open={this.state.isOpenDialog} data-owner='dialog' css={css`${styles}`}>
-                    <DialogTitle>Отправить заявку на расчет стоимости / доставки</DialogTitle>
-                    <DialogContent>
-                        <CustomForm label={''} handleCloseDialog={this.handleCloseDialog}/>
-                    </DialogContent>
-                </Dialog>
             </Body>
         </Root>
     }
@@ -102,31 +70,12 @@ margin-top: 40px;
 margin-bottom: -100px;
 display: flex;
 justify-content: center;
-#mdc-dialog{
-  z-index: 10;
-}
-.mdc-dialog__surface {
-    width: 60vw;
-    min-height: 60vh;
-    max-width: unset;
-    min-width: unset;
-    max-height: unset;
-    min-height: unset;
-    display: flex;
-    align-items: center;
-}
-.mdc-dialog__content{
-  width: 100%;
-}
-.mdc-dialog--content{
-@media(max-width: 990px){ 
-  height: 100vh;
-  width: 100vw;
-}
-}
 @media(max-width: 834px){
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: flex-start;
+  //height: calc(100% + 100px);
+  margin-bottom: -20px;
 }
 `
 const Body = styled.div`
@@ -262,13 +211,5 @@ opacity: 1.1;
   width: 100px;
   padding: 5px 10px;
   border-radius: 2px;
-}
-`
-const styles = css`
-@media(max-width: 798px){
-.mdc-dialog__surface{
-  width: 100vw;
-  height: 100vh;
-  }
 }
 `

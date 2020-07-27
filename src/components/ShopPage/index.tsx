@@ -67,6 +67,7 @@ justify-content: center;
 `
 const Wrapper = styled.div`
 width: 82vw;
+max-width: 1170px;
 display: flex;
 flex-direction: column;
 align-items: center;

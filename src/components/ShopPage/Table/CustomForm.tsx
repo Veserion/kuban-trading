@@ -91,7 +91,7 @@ export default class CustomForm extends React.Component<IProps, IState> {
         Способ доставки: ${this.state.delivery}
         Срок доставки: ${this.state.date}
         Адрес доставки или жд станция: ${this.state.address}
-        Комментарий к заказу: ${this.state.comment}`,
+        Комментарий к заказу: ${this.state.comment}`
         }
         e.preventDefault();
         emailjs.send('default_service', 'submitting_the_completed_form', templateParams, 'user_0onN8wEZpFQhKo8Z9dQhA')
@@ -112,13 +112,13 @@ export default class CustomForm extends React.Component<IProps, IState> {
                     <Subtitle>
                         Ваше имя:
                     </Subtitle>
-                    <Input type="text" value={name} onChange={this.handleChangeName} required={true}/>
+                    <Input type="text" value={name} onChange={this.handleChangeName} required={true} placeholder={'*'}/>
                 </Column>
                 <Column>
                     <Subtitle>
                         Контактный телефон:
                     </Subtitle>
-                    <Input type="tel" value={tel} onChange={this.handleChangeTel} required={true}/>
+                    <Input type="tel" value={tel} onChange={this.handleChangeTel} required={true} placeholder={'*'}/>
                 </Column>
                 <Column>
                     <Subtitle>
@@ -287,9 +287,6 @@ background: #FAFAFA;
 .rc-select-selection-search{
   width: 100%;
 }
-li.rc-select-dropdown-menu-item{
-  font-family: 'Roboto';
-}
 `
 const Row = styled.div`
 width: 100%;
@@ -312,7 +309,8 @@ font-size: 14px;
 `
 
 const Input = styled.input`
-width: 100%;
+width: calc(100% - 10px);
+padding-left: 10px;
 height: 35px;
 font-size: 14px;
 border: 1px solid darkgray;

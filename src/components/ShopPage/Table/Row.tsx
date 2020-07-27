@@ -65,8 +65,8 @@ box-sizing: border-box;
 }
 .mdc-dialog__surface {
 width: 60vw;
+max-width: 1170px;
 min-height: 60vh;
-max-width: unset;
 min-width: unset;
 max-height: unset;
 min-height: unset;

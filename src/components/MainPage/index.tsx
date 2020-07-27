@@ -167,8 +167,10 @@ color: white;
 font-weight: bold;
 cursor: pointer;
 @media(max-width: 834px){
+  width: calc(82vw - 20px);
+  height: unset;
   min-width: unset;
-  padding: 5px 10px;
+  padding: 10px 10px;
   border-radius: 2px;
 }
 @media(min-width: 1427px){
